@@ -1,0 +1,155 @@
+{
+  "project": "VSC Minecraft Theme",
+  "description": "A VS Code extension with multiple color themes, animations, sounds, and icon themes inspired by Minecraft.",
+  "rules": {
+    "one_feature_at_a_time": true,
+    "require_verification_to_close": true,
+    "valid_status": ["pending", "in_progress", "done", "blocked"]
+  },
+  "features": [
+    {
+      "id": 1,
+      "name": "extension_scaffold",
+      "title": "Extension Scaffold & Package Configuration",
+      "description": "Set up the VS Code extension scaffold: package.json with activation events, commands, configuration properties, keybindings, and marketplace metadata. Convert from the Half-Life theme template.",
+      "acceptance": [
+        "package.json has correct name, displayName, publisher, and description for Minecraft Theme",
+        "activationEvents includes onStartupFinished",
+        "contributes.themes array is empty (themes will be added in later features)",
+        "contributes.iconThemes array is empty (will be added later)",
+        "contributes.configuration has master sound toggle and per-event sound toggles",
+        "contributes.commands has enableAllSounds and disableAllSounds",
+        "contributes.keybindings remaps ctrl+j to a toggle-panel-with-sound command",
+        "contributes.markdown.previewStyles points to styles/minecraft-markdown.css",
+        "contributes.walkthroughs has a Minecraft-themed welcome walkthrough",
+        "vsce package produces a valid .vsix file"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 2,
+      "name": "base_minecraft_theme",
+      "title": "Base Minecraft Color Theme",
+      "description": "Create the main 'Minecraft (General)' VS Code color theme. A dark theme inspired by the general Minecraft aesthetic: grass greens, stone grays, sky blues, wood browns. Define all editor colors using VS Code theme color references.",
+      "acceptance": [
+        "Theme file exists at minecraft-theme/themes/Minecraft-color-theme.json",
+        "Defines editor.background, editor.foreground, sideBar.background, activityBar.background, titleBar.activeBackground, etc.",
+        "Uses Minecraft-inspired palette: grass greens (#4B7B3E, #5B8C4E), stone grays (#3C3C3C, #505050), sky blues (#4A9BE8), wood browns (#6B4226)",
+        "tokenColors define syntax highlighting for JS, TS, CSS, HTML, JSON, Markdown",
+        "Theme is registered in package.json contributes.themes",
+        "vsce package includes the theme file"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 3,
+      "name": "biome_themes",
+      "title": "Biome-Based Theme Variants",
+      "description": "Create additional color themes inspired by Minecraft biomes: Plains, Forest, Desert, Nether, The End, and Ocean. Each has its own unique palette while maintaining readability.",
+      "acceptance": [
+        "Theme files exist for at least 4 biomes: Plains, Desert, Nether, The End",
+        "Plains theme: warm greens, light blues, golden yellows",
+        "Desert theme: sandy browns, terracotta oranges, arid yellows",
+        "Nether theme: deep reds, oranges, netherrack browns, soulfire blues",
+        "End theme: dark purples, endstone off-whites, chorus plant pinks",
+        "Each theme defines the same set of required color keys as the base theme",
+        "Each theme has appropriate tokenColors for syntax highlighting",
+        "All themes are registered in package.json contributes.themes"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 4,
+      "name": "audio_engine",
+      "title": "Minecraft Sound Effects Engine",
+      "description": "Implement the audio playback engine in extension.js. Replace Half-Life sounds with Minecraft sounds for events: startup (Cave Sound / disc_13), file save (item_pickup), file create (block_placed), file delete (block_break), terminal open (chest_open), terminal error (creeper_hiss), tab switch (click), file open (door_open), file close (door_close).",
+      "acceptance": [
+        "extension.js has a sound map object with Minecraft sound files for each event",
+        "Linux uses mpg123, macOS uses afplay, Windows uses PowerShell audio",
+        "Dependency check runs on activation for the appropriate platform player",
+        "Each sound event can be individually toggled via VS Code configuration",
+        "Master enableSounds toggle controls all sounds",
+        "enableAllSounds and disableAllSounds commands work",
+        "togglePanelWithSound command wraps workbench.action.togglePanel with sound",
+        "No console.log in production code (use vscode.window for diagnostics)",
+        "Sound prioritization prevents overlapping critical sounds"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 5,
+      "name": "minecraft_audio_assets",
+      "title": "Minecraft Audio Asset Integration",
+      "description": "Source and integrate Minecraft sound effect .mp3 files into minecraft-theme/audio/. Replace all Half-Life sounds with Minecraft equivalents.",
+      "acceptance": [
+        "Audio directory contains Minecraft sounds: cave_sound.mp3, item_pickup.mp3, block_placed.mp3, block_break.mp3, chest_open.mp3, creeper_hiss.mp3, click.mp3, door_open.mp3, door_close.mp3",
+        "Each sound file is valid .mp3 format",
+        "Sounds are appropriately short (<5 seconds each for UI events)",
+        "File sizes are reasonable (<500KB each)",
+        "All sound references in extension.js match actual file names"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 6,
+      "name": "faction_character_themes",
+      "title": "Faction & Character Theme Variants",
+      "description": "Create additional themes for Minecraft factions and characters: Villagers, Piglins, Endermen, Steve, and a Creeper theme.",
+      "acceptance": [
+        "Villager theme: warm browns, emerald greens, parchment off-whites",
+        "Piglin theme: crimson reds, gold yellows, netherrack browns",
+        "Enderman theme: deep purples/black, ender pearl cyan highlights",
+        "Steve theme: classic blue jeans, cyan shirt, skin tones",
+        "Creeper theme: dark greens, black, creeper-face lime green accents",
+        "Each theme defines full editor color keys and tokenColors",
+        "All themes registered in package.json contributes.themes"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 8,
+      "name": "minecraft_markdown_styles",
+      "title": "Minecraft Markdown Preview Styles",
+      "description": "Create custom CSS for VS Code's markdown preview that styles it like Minecraft's enchanting language or a written book.",
+      "acceptance": [
+        "minecraft-markdown.css exists in minecraft-theme/styles/",
+        "CSS styles blockquotes like Minecraft achievement popups",
+        "CSS styles code blocks like Minecraft command blocks",
+        "CSS styles headings with Minecraft-inspired fonts and colors",
+        "CSS is registered in package.json contributes.markdown.previewStyles",
+        "Styles don't break existing markdown rendering"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 9,
+      "name": "welcome_walkthrough",
+      "title": "Minecraft Welcome Walkthrough",
+      "description": "Create an interactive VS Code walkthrough that welcomes users to the Minecraft Theme with a tutorial on selecting themes, enabling sounds, and applying icon themes.",
+      "acceptance": [
+        "Walkthrough registered in package.json contributes.walkthroughs",
+        "Walkthrough ID is minecraft-walkthrough",
+        "At least 3 steps: theme selection, icon theme, and sound enable",
+        "Each step has a title, description, media (image), and command link",
+        "Walkthrough uses Minecraft-themed language ('Equip Your Tools', 'Craft Your Workspace')",
+        "Images exist in minecraft-theme/images/ for walkthrough media"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 10,
+      "name": "extension_optimization",
+      "title": "Extension Packaging & Optimization",
+      "description": "Final optimization pass: verify .vscodeignore is correct, prune unused assets, verify vsce packaging works, add LICENSE, and finalize CHANGELOG.",
+      "acceptance": [
+        ".vscodeignore excludes source maps, node_modules (except runtime deps), and dev files",
+        "vsce package produces a .vsix under 5MB",
+        "LICENSE file is MIT or appropriate",
+        "CHANGELOG.md documents all features",
+        "Extension activates without errors on clean install",
+        "No Half-Life references remain in code or comments"
+      ],
+      "status": "done"
+    }
+  ]
+}
