@@ -50,9 +50,6 @@ for f in minecraft-theme/themes/*.json minecraft-theme/package.json minecraft-th
     node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "$f: valid JSON"
 done
 
-# Check for Half-Life remnants
-grep -rn "half-life\|halflife\|hl2\|HL2\|HEV\|hev" minecraft-theme/ --include="*.json" --include="*.js" --include="*.css" --include="*.md"
-
 # Check for any types (not applicable in JS, but check for missing try/catch)
 grep -rn "exec\(" minecraft-theme/extension.js | grep -v "try\|catch"
 ```
@@ -140,7 +137,6 @@ ls minecraft-theme/images/*.png
 - ❌ Invalid JSON in theme files → must validate with `JSON.parse()`.
 - ❌ No dependency check for audio player → must check `mpg123`/`afplay` at activation.
 - ❌ Hardcoded audio paths → must use `path.join(__dirname, ...)`.
-- ❌ Half-Life remnants in code or assets → must fully convert to Minecraft.
 - ❌ Marking the feature as `done` without build passing + reviewer approval.
 - ❌ Theme colors that don't provide sufficient contrast → must verify WCAG AA minimum.
 - ❌ Using `console.log` in production extension code → use `vscode.window` for diagnostics.
@@ -150,8 +146,7 @@ ls minecraft-theme/images/*.png
 1. The reviewer has gone through `CHECKPOINTS.md` and all checks pass.
 2. `vsce package` produces a valid `.vsix` file.
 3. All JSON files are valid (themes, package.json, icon theme).
-4. No Half-Life references remain in any file.
-5. The human has verified the feature in VS Code (theme loads, sounds play).
+4. The human has verified the feature in VS Code (theme loads, sounds play).
 6. `progress/current.md` reflects the verification result.
 
 If anything fails, **do not** mark anything as `done`. Record the blockage

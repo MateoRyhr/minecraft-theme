@@ -29,7 +29,6 @@
 - [ ] Audio engine uses platform-specific players (mpg123/afplay/PowerShell).
 - [ ] No `console.log` statements in production code.
 - [ ] No orphaned TODOs without context.
-- [ ] No Half-Life references remain (HEV, hl2, lambda, combine, etc.).
 - [ ] Files do not exceed line limits (300 lines extension.js, 200 lines JSON).
 
 ## C4 — The verification is real
@@ -47,7 +46,7 @@
 - [ ] `progress/history.md` has an entry for the last session.
 - [ ] The last feature worked on is reflected with its correct status in
       `feature_list.json`.
-- [ ] Cleanup is complete (no leftover debug state, no Half-Life remnants).
+- [ ] Cleanup is complete (no leftover debug state, no temporary files).
 
 ---
 

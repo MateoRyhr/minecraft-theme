@@ -150,6 +150,41 @@
         "No Half-Life references remain in code or comments"
       ],
       "status": "done"
+    },
+    {
+      "id": 11,
+      "name": "villager_theme_variants",
+      "title": "Villager Theme Variants (3 new: 2 dark, 1 light)",
+      "description": "Add 3 new Villager-inspired color themes: 2 dark variants (Desert Villager, Snow Villager) and 1 light variant (Villager Light). Total becomes 4 villager themes including the existing one.",
+      "acceptance": [
+        "3 new Villager theme JSON files exist in minecraft-theme/themes/",
+        "2 themes are dark type and 1 is light type",
+        "Desert Villager theme: warm sandy browns, terracotta oranges, parchment tones",
+        "Snow Villager theme: cold whites, ice blues, frosty grays",
+        "Villager Light theme: light parchment backgrounds, emerald accents, warm brown text",
+        "Each theme defines full editor color keys (same set as existing themes)",
+        "Each theme has appropriate tokenColors for syntax highlighting",
+        "All 3 themes are registered in package.json contributes.themes",
+        "vsce package succeeds and includes all theme files"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 12,
+      "name": "mob_themes",
+      "title": "Mob Themes: Spider, Zombie, Skeleton",
+      "description": "Create 3 new color themes inspired by Minecraft hostile mobs: Spider, Zombie, and Skeleton. Each captures the essence of the mob in its color palette.",
+      "acceptance": [
+        "3 new mob theme JSON files exist in minecraft-theme/themes/",
+        "Spider theme: deep purples, web whites, spider eye red accents",
+        "Zombie theme: rotten greens, decayed browns, pale skin tones",
+        "Skeleton theme: bone whites, dark voids, arrow gray accents",
+        "Each theme defines full editor color keys (same set as existing themes)",
+        "Each theme has appropriate tokenColors for syntax highlighting",
+        "All 3 themes are registered in package.json contributes.themes",
+        "vsce package succeeds and includes all theme files"
+      ],
+      "status": "done"
     }
   ]
 }

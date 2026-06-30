@@ -339,7 +339,7 @@ feat(audio): implement Minecraft sound effects engine
 feat(icons): add file icon theme with block SVGs
 fix(audio): handle missing mpg123 on Linux gracefully
 docs: update README with theme screenshots
-chore: prune unused Half-Life assets
+chore: prune unused assets
 ```
 
 ### Branch Naming

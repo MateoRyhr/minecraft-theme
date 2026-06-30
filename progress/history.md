@@ -319,3 +319,35 @@ _Append completed sessions here. Each entry should include: date, feature, outco
 - Half-Life grep: CLEAN ✓
 
 ---
+
+## 2026-06-30 — Features #11 & #12: Villager Theme Variants + Mob Themes
+
+**Features:** villager_theme_variants (id: 11), mob_themes (id: 12)
+**Agent:** leader → implementer (x2) → reviewer
+
+### What was implemented:
+
+#### Feature 11 — Villager Theme Variants (3 new, total 4 villager themes)
+| Theme | Type | Palette |
+|-------|------|---------|
+| Minecraft: Villager (Desert) | dark | Warm sandy browns (#3D2B1E), terracotta orange (#C4693D), parchment off-whites |
+| Minecraft: Villager (Snow) | dark | Ice blues (#1E2838), frost whites (#7EC8E3), snow grays |
+| Minecraft: Villager Light | light | Parchment (#F5F0E8), emerald (#4B7B3E), warm brown text |
+
+#### Feature 12 — Mob Themes (3 new)
+| Theme | Type | Palette |
+|-------|------|---------|
+| Minecraft: Spider | dark | Deep purple-black (#0A0A14), web white, spider eye red (#E83D3D) |
+| Minecraft: Zombie | dark | Rotten green-brown (#1E2E1E), pale green (#3D8B37) |
+| Minecraft: Skeleton | dark | Dark void (#0A0A0A), bone white (#E8E0D0), arrow gray |
+
+### Verification:
+- All 6 theme files: valid JSON ✅ (175 lines each, under 200 limit)
+- No Half-Life references ✅
+- No console.log ✅
+- vsce package: 39 files, 394.44 KB ✅
+- 16 themes total registered in package.json ✅
+
+### Review verdict: APPROVED
+
+---
