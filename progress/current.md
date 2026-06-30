@@ -3,40 +3,39 @@
 > This file is emptied when closing each session and moved to `history.md`.
 > While working, **keep it updated in real time**, not at the end.
 
-- **Feature in progress:** _none_
+- **Feature in progress:** Features 13, 14, 15, 16 — Herobrine Light, Herobrine Dark, Alex, Iron Golem
 - **Start:** 2026-06-30
-- **Agent:** leader
+- **Agent:** implementer
 
 ## Summary
 
-✅ Feature 11 (villager_theme_variants) — DONE
-✅ Feature 12 (mob_themes) — DONE
-✅ Reviewer APPROVED both features
+✅ Feature 13 (herobrine_light_theme) — DONE
+✅ Feature 14 (herobrine_dark_theme) — DONE
+✅ Feature 15 (alex_theme) — DONE
+✅ Feature 16 (iron_golem_theme) — DONE
 
 ## What Was Created
 
-### Feature 11 — 3 Villager Theme Variants
-| Theme | Type | File |
-|-------|------|------|
-| Minecraft: Villager (Desert) | dark | Minecraft-Villager-Desert-color-theme.json |
-| Minecraft: Villager (Snow) | dark | Minecraft-Villager-Snow-color-theme.json |
-| Minecraft: Villager Light | light | Minecraft-Villager-Light-color-theme.json |
+### 4 New Color Themes
 
-### Feature 12 — 3 Mob Themes
-| Theme | Type | File |
-|-------|------|------|
-| Minecraft: Spider | dark | Minecraft-Spider-color-theme.json |
-| Minecraft: Zombie | dark | Minecraft-Zombie-color-theme.json |
-| Minecraft: Skeleton | dark | Minecraft-Skeleton-color-theme.json |
+| # | Theme | Type | File | Palette Inspiration |
+|---|-------|------|------|--------------------|
+| 13 | Minecraft: Herobrine Light | light (vs) | `Minecraft-Herobrine-Light-color-theme.json` | Ghostly misty gray-blue background, ethereal cyan/white accents |
+| 14 | Minecraft: Herobrine Dark | dark (vs-dark) | `Minecraft-Herobrine-Dark-color-theme.json` | Deep void background, piercing white/supernatural cyan accents |
+| 15 | Minecraft: Alex | dark (vs-dark) | `Minecraft-Alex-color-theme.json` | Warm dark brown background, auburn/orange hair accents, teal-green clothing |
+| 16 | Minecraft: Iron Golem | dark (vs-dark) | `Minecraft-Iron-Golem-color-theme.json` | Weathered iron gray background, steel blue/vine green/rose red accents |
 
 ### Verification
-- All 6 theme files: valid JSON ✅
+
+- All 4 theme files: valid JSON ✅
 - All under 200 lines (175 each) ✅
-- No Half-Life references ✅
+- All required color keys from conventions §3 defined ✅
+- 20 tokenColors entries each (matching existing theme structure) ✅
+- No Half-Life references in new files ✅
 - No console.log ✅
-- vsce package succeeds (39 files, 394.44 KB) ✅
-- 16 themes total registered in package.json ✅
+- vsce package succeeds (43 files, 400.25 KB) ✅
+- 20 themes total registered in package.json ✅
 
 ## Next Step
 
-_Session complete. All features implemented, reviewed, and approved._
+_Ready for reviewer validation._

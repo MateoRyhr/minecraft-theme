@@ -185,6 +185,70 @@
         "vsce package succeeds and includes all theme files"
       ],
       "status": "done"
+    },
+    {
+      "id": 13,
+      "name": "herobrine_light_theme",
+      "title": "Herobrine Light Theme",
+      "description": "Create a light color theme inspired by Herobrine, the mythical ghost-like figure of Minecraft. Pale, ethereal tones with glowing white eye accents.",
+      "acceptance": [
+        "Theme file exists at Minecraft-Herobrine-Light-color-theme.json",
+        "Theme type is 'light'",
+        "Palette: pale ghostly backgrounds, white/cyan glowing eye accents, ethereal blues",
+        "Defines full editor color keys (same set as existing themes)",
+        "Has appropriate tokenColors for syntax highlighting",
+        "Registered in package.json contributes.themes with uiTheme 'vs'",
+        "vsce package succeeds and includes the theme file"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 14,
+      "name": "herobrine_dark_theme",
+      "title": "Herobrine Dark Theme",
+      "description": "Create a dark color theme inspired by Herobrine. Deep mysterious backgrounds with glowing white eye accents and supernatural tones.",
+      "acceptance": [
+        "Theme file exists at Minecraft-Herobrine-Dark-color-theme.json",
+        "Theme type is 'dark'",
+        "Palette: deep void backgrounds, piercing white eye accents, supernatural blues/cyans",
+        "Defines full editor color keys (same set as existing themes)",
+        "Has appropriate tokenColors for syntax highlighting",
+        "Registered in package.json contributes.themes with uiTheme 'vs-dark'",
+        "vsce package succeeds and includes the theme file"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 15,
+      "name": "alex_theme",
+      "title": "Alex Character Theme",
+      "description": "Create a color theme inspired by Alex, the second default player character in Minecraft. Features warm skin tones, auburn/red hair accents, and teal-green clothing colors.",
+      "acceptance": [
+        "Theme file exists at Minecraft-Alex-color-theme.json",
+        "Theme type is 'dark'",
+        "Palette: warm skin tones, auburn/orange-red hair accents, teal-green (#5B8C5A) clothing",
+        "Defines full editor color keys (same set as existing themes)",
+        "Has appropriate tokenColors for syntax highlighting",
+        "Registered in package.json contributes.themes with uiTheme 'vs-dark'",
+        "vsce package succeeds and includes the theme file"
+      ],
+      "status": "done"
+    },
+    {
+      "id": 16,
+      "name": "iron_golem_theme",
+      "title": "Iron Golem Theme",
+      "description": "Create a color theme inspired by the Iron Golem, the protective neutral mob. Features iron grays, wood browns, vine greens, and red rose accents.",
+      "acceptance": [
+        "Theme file exists at Minecraft-Iron-Golem-color-theme.json",
+        "Theme type is 'dark'",
+        "Palette: iron grays (#6A6A6A), weathered stone browns, vine green accents, red poppy/rose accents",
+        "Defines full editor color keys (same set as existing themes)",
+        "Has appropriate tokenColors for syntax highlighting",
+        "Registered in package.json contributes.themes with uiTheme 'vs-dark'",
+        "vsce package succeeds and includes the theme file"
+      ],
+      "status": "done"
     }
   ]
 }
