@@ -249,6 +249,27 @@
         "vsce package succeeds and includes the theme file"
       ],
       "status": "done"
+    },
+    {
+      "id": 17,
+      "name": "per_theme_markdown_styles",
+      "title": "Per-Theme Markdown Preview Styles",
+      "description": "Create individual CSS files for each of the 20 color themes so that the markdown preview style matches the currently active VS Code theme. Modify extension.js to detect theme changes and dynamically load the appropriate CSS via markdown.styles configuration.",
+      "acceptance": [
+        "20 per-theme CSS files exist in minecraft-theme/styles/ following naming pattern minecraft-markdown-<theme>.css",
+        "Each per-theme CSS file defines --md-* CSS custom properties that match the theme's color palette",
+        "minecraft-markdown.css is refactored to use --md-* CSS variables for all theme-specific values (colors, borders, shadows)",
+        "extension.js has an onDidChangeActiveColorTheme listener that detects theme changes",
+        "extension.js maps active theme name to the corresponding per-theme CSS file",
+        "extension.js updates markdown.styles configuration with the per-theme CSS file URI",
+        "extension.js cleans up markdown.styles on deactivation (removes minecraft-markdown entries)",
+        "package.json registers the base CSS file in contributes.markdown.previewStyles",
+        "vsce package succeeds and includes all CSS files",
+        "Theme label → CSS file mapping exists for all 20 themes",
+        "Each CSS file is under 200 lines (convention limit)",
+        "No console.log in production code"
+      ],
+      "status": "done"
     }
   ]
 }

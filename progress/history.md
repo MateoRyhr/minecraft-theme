@@ -351,3 +351,38 @@ _Append completed sessions here. Each entry should include: date, feature, outco
 ### Review verdict: APPROVED
 
 ---
+
+## 2026-07-01 — Feature #17: Per-Theme Markdown Preview Styles
+
+**Feature:** per_theme_markdown_styles (id: 17)
+**Agent:** leader (orchestrator) → implementer → reviewer
+
+### What was implemented:
+1. **Refactored `minecraft-markdown.css`** — All hardcoded colors replaced with `--md-*` CSS custom properties (127 lines)
+2. **Created 19 per-theme CSS variable files** — Each defines 27 `--md-*` CSS custom properties matching that theme's color palette (30 lines each)
+3. **Modified `extension.js`** — Added:
+   - `getThemeMarkdownCss()` — maps all 20 theme labels to CSS filenames
+   - `updateMarkdownStyles()` — reads active theme, updates `markdown.styles` setting
+   - `onDidChangeActiveColorTheme` listener — triggers on theme switch
+   - `deactivate()` cleanup — removes minecraft-markdown entries from `markdown.styles`
+
+### What was created:
+- 19 new CSS files in `minecraft-theme/styles/` (plains, desert, nether, end, villager × 4, piglin, enderman, steve, creeper, spider, zombie, skeleton, herobrine × 2, alex, iron-golem)
+
+### Verification:
+- All 20 CSS files: valid, each under 200 lines ✅
+- All 20 theme JSON files: valid JSON ✅
+- extension.js: 150 lines (under 300 limit) ✅
+- No console.log ✅
+- No Half-Life references ✅
+- vsce package: 62 files, 409.62 KB ✅
+- Theme → CSS mapping covers all 20 themes ✅
+- onDidChangeActiveColorTheme listener registered ✅
+- deactivate() properly cleans up ✅
+
+### How it works:
+When the user switches themes, VS Code fires `onDidChangeActiveColorTheme`. extension.js reads `workbench.colorTheme`, maps it to the corresponding CSS file (e.g., "Minecraft: Nether" → `minecraft-markdown-nether.css`), and updates the `markdown.styles` setting. The CSS variables from the per-theme file override the base CSS defaults via standard CSS cascade, making the markdown preview colors match the active theme.
+
+### Review verdict: APPROVED
+
+---
